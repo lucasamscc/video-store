@@ -3,6 +3,7 @@ package com.videostore.videostore.controller;
 import com.videostore.videostore.model.Customer;
 import com.videostore.videostore.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class CustomerController {
     }
 
     @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
     public Customer save(@RequestBody Customer customer) {
         return customerService.save(customer);
     }
