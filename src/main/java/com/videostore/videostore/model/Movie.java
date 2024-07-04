@@ -15,5 +15,5 @@ public class Movie {
     private String genre;
     private int year;
     private String director;
-    private boolean available;
+    private boolean available = true;
 }

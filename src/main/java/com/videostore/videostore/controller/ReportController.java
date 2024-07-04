@@ -17,12 +17,12 @@ public class ReportController {
     @Autowired
     private Driver driver;
 
-    @GetMapping("/top-customers-movies")
-    public List<Map<String, Object>> getTopCustomersMovies() {
+    @GetMapping("/old-movies")
+    public List<Map<String, Object>> getOldMovies() {
         try (Session session = driver.session()) {
-            String query = "MATCH (c:Customer)-[r:RENTED]->(m:Movie) " +
-                    "RETURN c.name AS Customer, m.title AS Movie, COUNT(r) AS Rentals " +
-                    "ORDER BY Rentals DESC LIMIT 10";
+            String query = "MATCH (m:Movie) " +
+                    "WHERE m.year <= date().year - 10 " +
+                    "RETURN m.title AS Movie, m.year AS Year";
             Result result = session.run(query);
             return result.list(MapAccessor::asMap);
         }
