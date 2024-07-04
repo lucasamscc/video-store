@@ -51,6 +51,7 @@ CREATE (:Movie {id: 3, title: 'The Dark Knight', genre: 'Action', year: 2008, di
 CREATE (:Movie {id: 4, title: 'Forrest Gump', genre: 'Drama', year: 1994, director: 'Robert Zemeckis', available: true});
 CREATE (:Movie {id: 5, title: 'The Godfather', genre: 'Crime', year: 1972, director: 'Francis Ford Coppola', available: true});
 ```
+6. Após isso pode executar `locadora05.sh` para começar a usar
 
 # Locadora utilizando Banco de Dados Neo4j
 
